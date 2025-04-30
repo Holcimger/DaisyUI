@@ -5,5 +5,8 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: 'https://Holcimger.github.io/DaisyUI/', // Reemplaza 'DaisyUI' con el nombre de tu repositorio
+  build: {
+    outDir: "dist",
+    assetsDir: "",
+  },
 });
