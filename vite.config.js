@@ -5,9 +5,5 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/DaisyUI/",
-  build: {
-    outDir: "docs",
-    assetsDir: "",
-  },
+  base: process.env.VITE_BASE_PATH || "/DaisyUI2", // Change this to match your repo name!
 });
