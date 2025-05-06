@@ -52,8 +52,8 @@ function App() {
         {/* Pass the callback */}
         <div className="flex-1">
           <Routes>
-            <Route path="/" element={<HomePage data={uniqueData} />} /> Pass the
-            dynamic data
+            <Route path="/" element={<HomePage data={uniqueData} />} />{" "}
+            Pass the dynamic data
             <Route path="/detail/:id" element={<DetailPageWrapper />} />
             {/* Catch-all route for any other path */}
             <Route path="*" element={<NotFoundPage />} />
