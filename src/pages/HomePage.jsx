@@ -18,7 +18,7 @@ const HomePage = ({ data }) => {
             return (
               <div
                 key={machine}
-                className="rounded-lg w-full bg-stone-200 overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+                className="rounded-lg w-full bg-neutral-300 overflow-hidden shadow-md hover:shadow-xl transition-shadow"
               >
                 <Link
                   to={`/detail/${machine}`}

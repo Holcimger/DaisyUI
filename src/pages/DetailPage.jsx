@@ -122,7 +122,7 @@ const DetailPage = ({ data }) => {
                           </h2>
                           <div className="grid grid-cols-1 gap-4 ">
                             {posicion.map((elemento, j) => {
-                              let background = "bg-neutral-200"; // Default background
+                              let background = "bg-neutral-300"; // Default background
 
                               if (elemento?.["SS"] === 1) {
                                 background = "bg-red-500"; // Red
@@ -139,13 +139,13 @@ const DetailPage = ({ data }) => {
                                 >
                                   <input type="checkbox" />
                                   <div
-                                    className="collapse-title font-bold text-sm "
+                                    className="collapse-title font-bold text-sm"
                                     tabIndex={0}
-                                    style={{ backgroundColor: background }}
+                                    // style={{ backgroundColor: background }}
                                   >
                                     {j + 1} - {elemento?.["descripcion VTM"]}
                                   </div>
-                                  <div className="collapse-content text-sm bg-neutral-300">
+                                  <div className="collapse-content text-sm bg-indigo-100 ">
                                     <p className="font-semibold pt-3">
                                       <strong className="font-bold text-blue-700">
                                         Posición:
