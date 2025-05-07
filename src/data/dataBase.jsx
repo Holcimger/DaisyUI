@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Load_file from "../components/Load_file";
-import LoadInternalFile from "../components/Load_file_2";
+import LoadInternalFile from "../components/LoadInternalFile";
 
 const DataBase = ({ onDataLoaded }) => {
   const [showExcel, setShowExcel] = useState(true);
@@ -50,7 +50,6 @@ const DataBase = ({ onDataLoaded }) => {
             handleClose={closeExcel}
             onFileLoaded={handleFileLoaded}
           /> */}
-          {/* LoadInternalFile = ({ filePath, onFileLoaded }) */}
           <LoadInternalFile
             filePath={"/Repuestos Mecanicos.xlsx"}
             onFileLoaded={handleFileLoaded}

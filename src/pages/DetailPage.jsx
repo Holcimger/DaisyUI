@@ -32,6 +32,7 @@ const DetailPage = ({ data }) => {
       <img
         src={currentImage}
         alt={Maquina}
+        loading="lazy"
         className="flex-grow m-1 object-contain bg-indigo-100 max-h-full max-w-full rounded-md"
       />
       {/* Sidebar con botones o referencias */}
@@ -83,6 +84,7 @@ const DetailPage = ({ data }) => {
                     <div className="flex flex-col md:flex-row h-[90vh] w-full rounded-lg">
                       {/* Imagen principal dentro del modal */}
                       <img
+                        loading="lazy"
                         src={`/${Maquina}_${i + 1}.svg`}
                         alt={`/${Maquina}_${i + 1}.svg`}
                         className="flex-grow object-contain bg-indigo-100 rounded-md m-1 p-1"
