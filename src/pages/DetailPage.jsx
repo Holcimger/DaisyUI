@@ -47,7 +47,7 @@ const DetailPage = ({ data }) => {
                 {/* Botón que activa un modal */}
                 <label
                   htmlFor={`modal-${i}`}
-                  className="btn w-full text-center bg-dark font-semibold bg-neutral-300 hover:bg-[#94c12e] rounded-md min-h-13 h-fit"
+                  className="btn w-full text-center font-semibold bg-neutral-300 hover:bg-[#94c12e] rounded-md min-h-13 h-fit"
                 >
                   {i + 1} - {posicion[0]["Descripción"]}
                 </label>
@@ -96,19 +96,22 @@ const DetailPage = ({ data }) => {
                           Leyenda
                         </h2>
                         <div className="">
-                          <div className="bg-green-500 text-black  m-1 p-2 rounded-lg shadow-md">
+                          <div className="bg-green-500 text-black  m-1 p-2 shadow-md rounded-md min-h-13 h-fit">
                             <h2 className="font-bold text-sm">
-                              Verde: Mas de 5 piezas en el almacen
+                              El almacen tiene <strong>más</strong> piezas que
+                              el Stock de seguridad
                             </h2>
                           </div>
-                          <div className="bg-yellow-500 text-black m-1 p-2  rounded-lg shadow-md">
+                          <div className="bg-yellow-500 text-black m-1 p-2 rounded-md shadow-md min-h-13 h-fit">
                             <h2 className="font-bold text-sm">
-                              Amarillo: 1 Pieza en el almacen
+                              El almacen tiene la <strong>misma</strong>{" "}
+                              cantidad de piezas que el Stock de seguridad
                             </h2>
                           </div>
-                          <div className="bg-red-500 text-black m-1 p-2  rounded-lg shadow-md">
+                          <div className="bg-red-500 text-black m-1 p-2 rounded-md shadow-md min-h-13 h-fit">
                             <h2 className="font-bold text-sm">
-                              Rojo: Sin stock
+                              El almacen tiene <strong>menos</strong> piezas que
+                              el Stock de seguridad
                             </h2>
                           </div>
                         </div>
@@ -141,7 +144,7 @@ const DetailPage = ({ data }) => {
                                 >
                                   <input type="checkbox" />
                                   <div
-                                    className="collapse-title font-bold text-sm"
+                                    className="collapse-title font-bold text-sm rounded-md min-h-13 h-fit"
                                     tabIndex={0}
                                     // style={{ backgroundColor: background }}
                                   >
