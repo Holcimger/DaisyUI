@@ -68,7 +68,7 @@ const DetailPage = ({ data }) => {
                     <button>close</button>{" "}
                     {/* Este botón es necesario para que el backdrop funcione con el formulario */}
                   </form>
-                  <div className="modal-box relative max-w-[90vw] p-1 bg-gray-200">
+                  <div className="modal-box relative max-w-[98vw] p-1 bg-gray-200">
                     <div className="flex items-center justify-between bg-stone-100 rounded-md m-1 p-2">
                       <h3 className="font-bold text-lg text-center flex-1 py-2">
                         {i + 1} - {posicion[0]["Descripción"]}
