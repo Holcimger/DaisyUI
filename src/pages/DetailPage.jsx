@@ -98,20 +98,29 @@ const DetailPage = ({ data }) => {
                         <div className="">
                           <div className="bg-green-500 text-black  m-1 p-2 shadow-md rounded-md min-h-13 h-fit">
                             <h2 className="font-bold text-sm">
-                              El almacen tiene <strong>más</strong> piezas que
-                              el Stock de seguridad
+                              El almacen tiene{" "}
+                              <u>
+                                <strong>más</strong>
+                              </u>{" "}
+                              piezas que el Stock de seguridad
                             </h2>
                           </div>
                           <div className="bg-yellow-500 text-black m-1 p-2 rounded-md shadow-md min-h-13 h-fit">
                             <h2 className="font-bold text-sm">
-                              El almacen tiene la <strong>misma</strong>{" "}
+                              El almacen tiene la{" "}
+                              <u>
+                                <strong>misma</strong>
+                              </u>{" "}
                               cantidad de piezas que el Stock de seguridad
                             </h2>
                           </div>
                           <div className="bg-red-500 text-black m-1 p-2 rounded-md shadow-md min-h-13 h-fit">
                             <h2 className="font-bold text-sm">
-                              El almacen tiene <strong>menos</strong> piezas que
-                              el Stock de seguridad
+                              El almacen tiene{" "}
+                              <u>
+                                <strong>menos</strong>
+                              </u>{" "}
+                              piezas que el Stock de seguridad
                             </h2>
                           </div>
                         </div>
