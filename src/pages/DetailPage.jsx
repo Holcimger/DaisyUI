@@ -70,9 +70,10 @@ const DetailPage = ({ data }) => {
                   </form>
                   <div className="modal-box relative max-w-[98vw] p-1 bg-gray-200">
                     <div className="flex items-center justify-between bg-stone-100 rounded-md m-1 p-2">
-                      <h3 className="font-bold text-lg text-center flex-1 py-2">
+                      <h3 className="w-full font-bold text-lg text-center flex-1 ">
                         {i + 1} - {posicion[0]["Descripción"]}
                       </h3>
+
                       <label
                         htmlFor={`modal-${i}`}
                         className="btn btn-sm btn-error absolute right-0 top-0"
@@ -93,8 +94,15 @@ const DetailPage = ({ data }) => {
                       {/* Sidebar interno con botones/detalles en el modal */}
                       <div className="flex flex-col justify-start bg-stone-100 rounded-md m-1 p-1 w-full md:w-1/10 h-fit">
                         <h2 className="text-lg text-center font-semibold mb-2">
-                          Leyenda
+                          Leyenda:
                         </h2>
+                        <div className=" text-black  m-1 p-2 shadow-md rounded-md min-h-13 h-fit">
+                          <h2 className="font-bold text-sm">
+                            El color representa la cantidad de piezas que hay en
+                            el <strong>almacén</strong> vs la cantidad de piezas
+                            de <strong>stock de seguridad</strong>
+                          </h2>
+                        </div>
                         <div className="">
                           <div className="bg-green-500 text-black  m-1 p-2 shadow-md rounded-md min-h-13 h-fit">
                             <h2 className="font-bold text-sm">
@@ -102,16 +110,16 @@ const DetailPage = ({ data }) => {
                               <u>
                                 <strong>más</strong>
                               </u>{" "}
-                              piezas que el Stock de seguridad
+                              piezas
                             </h2>
                           </div>
                           <div className="bg-yellow-500 text-black m-1 p-2 rounded-md shadow-md min-h-13 h-fit">
                             <h2 className="font-bold text-sm">
-                              El almacen tiene la{" "}
+                              El almacen tiene {" "}
                               <u>
-                                <strong>misma</strong>
+                                <strong>igual</strong>
                               </u>{" "}
-                              cantidad de piezas que el Stock de seguridad
+                             cantidad
                             </h2>
                           </div>
                           <div className="bg-red-500 text-black m-1 p-2 rounded-md shadow-md min-h-13 h-fit">
@@ -120,7 +128,7 @@ const DetailPage = ({ data }) => {
                               <u>
                                 <strong>menos</strong>
                               </u>{" "}
-                              piezas que el Stock de seguridad
+                              piezas
                             </h2>
                           </div>
                         </div>
