@@ -15,28 +15,30 @@ const DetailPage = ({ data }) => {
   }
 
   return (
-    <div className="flex flex-col md:flex-row md:h-[calc(100vh-64px)] maxh-full bg-gray-200">
+    <div className="flex flex-col md:flex-row md:h-[calc(100vh-64px)] maxh-full bg-neutral-200">
       {" "}
       {/* Contenedor principal*/}
       {/* Texto Izquierda */}
-      <div className="flex flex-col m-1 p-1 items-start justify-star bg-stone-100 h-fit  rounded-md">
-        <h1 className="text-xs md:text-2xl font-bold">{Maquina}</h1>
-        <Link
-          to="/"
-          className="text-blue-500 hover:underline text-xs md:text-lg pt-2"
-        >
-          &larr; Volver a Galeria
-        </Link>
-      </div>
       {/* Imagen */}
       <img
         src={currentImage}
         alt={Maquina}
         loading="lazy"
-        className="flex-grow m-1 object-contain bg-indigo-100 max-h-full max-w-full rounded-md"
+        className="flex-grow m-1 p-1 object-contain bg-neutral-100 max-h-full max-w-full rounded-md"
       />
       {/* Sidebar con botones o referencias */}
       <div className="flex flex-col w-full md:w-64 justify-start bg-stone-100 m-1 p-1 rounded-md overflow-y-auto">
+        <div className="flex flex-col items-center justify-star bg-neutral-100 h-fit  rounded-md">
+          <h1 className="text-xs md:text-2xl font-bold text-center mb-5">
+            {Maquina}
+          </h1>
+          <Link
+            to="/"
+            className="text-blue-500 text-center hover:underline text-xs md:text-lg mb-5"
+          >
+            &larr; Volver al inicio
+          </Link>
+        </div>
         <h1 className="text-xs md:text-2xl font-bold text-center">
           Referencias
         </h1>
@@ -47,7 +49,7 @@ const DetailPage = ({ data }) => {
                 {/* Botón que activa un modal */}
                 <label
                   htmlFor={`modal-${i}`}
-                  className="btn w-full text-center font-semibold bg-neutral-300 hover:bg-[#94c12e] rounded-md min-h-13 h-fit"
+                  className="btn w-full text-center font-semibold bg-[#04bbf1] hover:bg-[#94c12e] rounded-md min-h-13 h-fit"
                 >
                   {i + 1} - {posicion[0]["Descripción"]}
                 </label>
@@ -70,7 +72,7 @@ const DetailPage = ({ data }) => {
                   </form>
                   <div className="modal-box relative max-w-[98vw] p-1 bg-gray-200">
                     <div className="flex items-center justify-between bg-stone-100 rounded-md m-1 p-2">
-                      <h3 className="w-full font-bold text-lg text-center flex-1 ">
+                      <h3 className="w-full font-bold text-lg text-center flex-1">
                         {i + 1} - {posicion[0]["Descripción"]}
                       </h3>
 
@@ -88,70 +90,55 @@ const DetailPage = ({ data }) => {
                         loading="lazy"
                         src={`/${Maquina}_${i + 1}.svg`}
                         alt={`/${Maquina}_${i + 1}.svg`}
-                        className="flex-grow object-contain bg-indigo-100 rounded-md m-1 p-1"
+                        className="flex-grow object-contain bg-stone-100 rounded-md m-1 p-1"
                       />
 
                       {/* Sidebar interno con botones/detalles en el modal */}
-                      <div className="flex flex-col justify-start bg-stone-100 rounded-md m-1 p-1 w-full md:w-1/10 h-fit">
-                        <h2 className="text-lg text-center font-semibold mb-2">
+                      <div className="flex flex-col justify-between bg-stone-100 rounded-md m-1 p-1 w-full md:w-2/10">
+                        {/* Título siempre visible */}
+                        <h2 className="w-full font-bold text-lg text-center">
                           Leyenda:
                         </h2>
-                        <div className=" text-black  m-1 p-2 shadow-md rounded-md min-h-13 h-fit">
+                        <div className=" text-black  m-1 p-1 shadow-md rounded-md min-h-13 h-fit">
                           <h2 className="font-bold text-sm">
                             El color representa la cantidad de piezas que hay en
                             el <strong>almacén</strong> vs la cantidad de piezas
                             de <strong>stock de seguridad</strong>
                           </h2>
                         </div>
-                        <div className="">
-                          <div className="bg-green-500 text-black  m-1 p-2 shadow-md rounded-md min-h-13 h-fit">
-                            <h2 className="font-bold text-sm">
-                              El almacen tiene{" "}
-                              <u>
-                                <strong>más</strong>
-                              </u>{" "}
-                              piezas
+                        <div className="flex flex-col justify-between text-center">
+                          <div className="bg-emerald-400 text-black  m-1 p-2 shadow-md rounded-md min-h-13 h-fit">
+                            <h2 className="font-bold text-sm ">
+                              Piezas almacen <strong>{">"}</strong> piezas SS
                             </h2>
                           </div>
-                          <div className="bg-yellow-500 text-black m-1 p-2 rounded-md shadow-md min-h-13 h-fit">
+                          <div className="bg-amber-300 text-black m-1 p-2 rounded-md shadow-md min-h-13 h-fit">
                             <h2 className="font-bold text-sm">
-                              El almacen tiene {" "}
-                              <u>
-                                <strong>igual</strong>
-                              </u>{" "}
-                             cantidad
+                              Piezas almacen <strong>{"="}</strong> piezas SS
                             </h2>
                           </div>
-                          <div className="bg-red-500 text-black m-1 p-2 rounded-md shadow-md min-h-13 h-fit">
+                          <div className="bg-rose-400 text-black m-1 p-2 rounded-md shadow-md min-h-13 h-fit">
                             <h2 className="font-bold text-sm">
-                              El almacen tiene{" "}
-                              <u>
-                                <strong>menos</strong>
-                              </u>{" "}
-                              piezas
+                              Piezas almacen <strong>{"<"}</strong> piezas SS
                             </h2>
                           </div>
                         </div>
-                      </div>
-                      <div className="flex flex-col justify-between bg-stone-100 rounded-md m-1 p-1 w-full md:w-2/10">
-                        {/* Título siempre visible */}
-
                         {/* Botones / Contenido collapse */}
 
                         <div className="flex-1 overflow-y-auto  rounded-xl bg-stone-100 ">
-                          <h2 className="w-full text-lg text-center font-semibold mb-2">
-                            Referencias 2
+                          <h2 className="w-full font-bold text-lg text-center mt-3">
+                            Referencias
                           </h2>
                           <div className="grid grid-cols-1 gap-4 ">
                             {posicion.map((elemento, j) => {
                               let background = "bg-neutral-300"; // Default background
 
                               if (elemento?.["SS"] === 1) {
-                                background = "bg-red-500"; // Red
+                                background = "bg-rose-400"; // Red
                               } else if (elemento?.["SS"] >= 3) {
-                                background = "bg-green-500"; // Green
+                                background = "bg-emerald-400"; // Green
                               } else if (elemento?.["SS"] >= 2) {
-                                background = "bg-yellow-500"; // Yellow
+                                background = "bg-amber-300"; // Yellow
                               }
 
                               return (
@@ -167,7 +154,7 @@ const DetailPage = ({ data }) => {
                                   >
                                     {j + 1} - {elemento?.["descripcion VTM"]}
                                   </div>
-                                  <div className="collapse-content text-sm bg-indigo-100 ">
+                                  <div className="collapse-content text-sm  bg-stone-200">
                                     <p className="font-semibold pt-3">
                                       <strong className="font-bold text-blue-700">
                                         Posición:

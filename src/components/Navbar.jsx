@@ -5,7 +5,7 @@ const logo =
 
 const Navbar = () => {
   return (
-    <nav className="bg-slate-200 p-1">
+    <nav className="bg-slate-100 p-1">
       <div className="container mx-auto h-full px-4 flex flex-wrap items-center justify-between">
         {/* Left section: Logo + Country */}
         <div className="flex items-end">

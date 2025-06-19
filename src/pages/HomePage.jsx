@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const HomePage = React.memo(({ data }) => {
   return (
-    <div className="flex h-[calc(100vh-64px)] max-h-[100vh] bg-gray-200">
+    <div className="flex h-[calc(100vh-64px)] max-h-[100vh] bg-neutral-200">
       {/* Main content with nº images */}
       <div className="flex-1 p-6 overflow-auto">
         <h1 className="text-2xl font-bold mb-6">Catálogos de Repuestos</h1>
@@ -30,7 +30,7 @@ const HomePage = React.memo(({ data }) => {
                       src={`/${machine}.svg`}
                       alt={machine}
                       loading="lazy"
-                      className="w-full h-[30rem] object-contain bg-indigo-100 p-1 cursor-pointer"
+                      className="w-full h-[30rem] object-contain bg-neutral-100 p-1 cursor-pointer"
                     />
                   </picture>
                 </Link>
