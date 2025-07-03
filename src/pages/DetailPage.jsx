@@ -101,11 +101,11 @@ const DetailPage = ({ data }) => {
                       {/* Sidebar interno con botones/detalles en el modal */}
                       <div className="flex flex-col justify-between bg-stone-100 rounded-md m-1 p-1 w-full md:w-2/10">
                         {/* Título siempre visible */}
-                        <div className="bg-blue-200 mb-1 border-2 border-double rounded-lg border-black ">
+                        <div className="bg-stone-200 mb-1 border-1 rounded-lg border-black border-double">
                           <h2 className="w-full font-bold text-lg text-center">
                             Leyenda:
                           </h2>
-                          <div className=" text-black  m-1 p-1 shadow-md rounded-md min-h-13 h-fit">
+                          <div className=" text-black  m-1 p-1 shadow-md rounded-md min-h-13 h-fit bg-stone-100">
                             <h2 className="font-bold text-sm">
                               El color representa la cantidad de piezas que hay
                               en el <strong>almacén</strong> vs la cantidad de
@@ -152,7 +152,7 @@ const DetailPage = ({ data }) => {
                               return (
                                 <div
                                   key={j}
-                                  className={`collapse ${background} hover:bg-[#94c12e] border-base-100 border`}
+                                  className={`collapse ${background} hover:bg-[#94c12e]`}
                                 >
                                   <input type="checkbox" />
                                   <div
