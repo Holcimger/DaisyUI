@@ -152,11 +152,11 @@ const DetailPage = ({ data }) => {
                               return (
                                 <div
                                   key={j}
-                                  className={`collapse ${background} border-base-100 border`}
+                                  className={`collapse ${background} hover:bg-[#94c12e] border-base-100 border`}
                                 >
                                   <input type="checkbox" />
                                   <div
-                                    className="collapse-title font-bold text-sm rounded-md min-h-13 h-fit"
+                                    className="collapse-title font-bold text-sm rounded-md min-h-13 h-fit "
                                     tabIndex={0}
                                     // style={{ backgroundColor: background }}
                                   >
