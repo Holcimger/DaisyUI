@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import NotFoundPage from "./NotFoundPage"; // Import the 404 component
 
 const DetailPage = ({ data }) => {
-  // console.log("data :>> ", data);
-  const { id } = useParams();
-  const [activePopup, setActivePopup] = useState(null);
+  console.log("data :>> ", data);
+  if (!data) {
+    return <></>; // Render a fallback component or return null
+  }
 
   // Find the current image
-  const Maquina = data["1"] && `${data["1"][0]["Modelo maquina"]}`;
+  const Maquina = data["0"] && `${data["0"][0]["Modelo maquina"]}`;
   const currentImage = `/${Maquina}.svg`;
 
   if (!currentImage) {
@@ -49,9 +51,12 @@ const DetailPage = ({ data }) => {
                 {/* Botón que activa un modal */}
                 <label
                   htmlFor={`modal-${i}`}
-                  className="btn w-full text-center font-semibold bg-[#04bbf1] hover:bg-[#94c12e] rounded-md min-h-13 h-fit"
+                  className="btn w-full text-start font-semibold bg-[#04bbf1] hover:bg-[#94c12e] rounded-md min-h-13 h-fit"
                 >
-                  {i + 1} - {posicion[0]["Descripción"]}
+                  <div>{i + 1}</div>
+                  <div className="w-full text-start">
+                    {posicion[0]["Descripción"]}
+                  </div>
                 </label>
                 <input
                   type="checkbox"
@@ -96,21 +101,24 @@ const DetailPage = ({ data }) => {
                       {/* Sidebar interno con botones/detalles en el modal */}
                       <div className="flex flex-col justify-between bg-stone-100 rounded-md m-1 p-1 w-full md:w-2/10">
                         {/* Título siempre visible */}
-                        <h2 className="w-full font-bold text-lg text-center">
-                          Leyenda:
-                        </h2>
-                        <div className=" text-black  m-1 p-1 shadow-md rounded-md min-h-13 h-fit">
-                          <h2 className="font-bold text-sm">
-                            El color representa la cantidad de piezas que hay en
-                            el <strong>almacén</strong> vs la cantidad de piezas
-                            de <strong>stock de seguridad</strong>
+                        <div className="bg-blue-200 mb-1 border-2 border-double rounded-lg border-black ">
+                          <h2 className="w-full font-bold text-lg text-center">
+                            Leyenda:
                           </h2>
-                        </div>
-                        <div className="flex flex-col justify-between text-center">
-                          <div className="bg-emerald-400 text-black  m-1 p-2 shadow-md rounded-md min-h-13 h-fit">
-                            <h2 className="font-bold text-sm ">
-                              Piezas almacen <strong>{">"}</strong> piezas SS
+                          <div className=" text-black  m-1 p-1 shadow-md rounded-md min-h-13 h-fit">
+                            <h2 className="font-bold text-sm">
+                              El color representa la cantidad de piezas que hay
+                              en el <strong>almacén</strong> vs la cantidad de
+                              piezas de <strong>stock de seguridad</strong>
                             </h2>
+                          </div>
+
+                          <div className="flex flex-col justify-between text-center">
+                            <div className="bg-emerald-400 text-black  m-1 p-2 shadow-md rounded-md min-h-13 h-fit">
+                              <h2 className="font-bold text-sm ">
+                                Piezas almacen <strong>{">"}</strong> piezas SS
+                              </h2>
+                            </div>
                           </div>
                           <div className="bg-amber-300 text-black m-1 p-2 rounded-md shadow-md min-h-13 h-fit">
                             <h2 className="font-bold text-sm">

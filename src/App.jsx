@@ -29,7 +29,7 @@ function App() {
   // Determine which data to pass to HomePage: loaded data or initial data
   // Helper function to get filtered data for DetailPage
   const getFilteredDataForDetailPage = (id) => {
-    const machineIndex = uniqueData.indexOf(id);
+    const machineIndex = uniqueData?.indexOf(id);
     return loadedData ? loadedData[machineIndex] : null; // Extract specific data by ID
   };
 

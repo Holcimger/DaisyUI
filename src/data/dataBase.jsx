@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Load_file from "../components/Load_file";
+import Load_input_file from "../components/Load_input_file";
 import LoadInternalFile from "../components/LoadInternalFile";
 
 const DataBase = ({ onDataLoaded }) => {
@@ -25,7 +25,7 @@ const DataBase = ({ onDataLoaded }) => {
         if (orderedData[index][position])
           orderedData[index][position].push(element);
         else {
-          console.log("orderedData :>> ", orderedData);
+          // console.log("orderedData :>> ", orderedData);
           orderedData[index].push([]);
           orderedData[index][position]?.push(element);
         }

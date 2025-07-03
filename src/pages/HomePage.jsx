@@ -22,10 +22,7 @@ const HomePage = React.memo(({ data }) => {
               >
                 <Link to={`/detail/${machine}`}>
                   <picture>
-                    <source
-                      media="(min-width: 768px)"
-                      srcSet={`/${machine}.svg`}
-                    />
+                    <source media="(min-width: 768px)" />
                     <img
                       src={`/${machine}.svg`}
                       alt={machine}
