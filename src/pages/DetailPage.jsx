@@ -104,12 +104,12 @@ const DetailPage = ({ data }) => {
                         {/* Título siempre visible */}
                         <div className="bg-stone-200 mb-1 border-1 rounded-lg border-black border-double">
                           <div className=" text-black  m-1 p-1 shadow-md rounded-md min-h-13 h-fit bg-stone-100">
-                            <h2 className="text-sm">
+                            <h2 className="text-sm mt-2">
                               El color representa la cantidad de piezas que hay
                               en el <strong>almacén</strong> vs la cantidad de
                               piezas de <strong>stock de seguridad</strong>.
                             </h2>
-                            <h2 className="text-sm">
+                            <h2 className="text-sm my-2 ">
                               Haga
                               <strong> click </strong>
                               en una pieza para ver sus detalles.
@@ -117,19 +117,19 @@ const DetailPage = ({ data }) => {
                           </div>
 
                           <div className="flex flex-col justify-between text-center">
-                            <div className=" bg-emerald-400 text-black m-1 p-2 shadow-md rounded-md min-h-13 h-fit">
+                            <div className=" bg-emerald-400 text-black m-1 p-1 shadow-md rounded-md h-fit">
                               <h2 className="font-bold text-sm ">
-                                Piezas almacen <strong>{">"}</strong> piezas SS
+                                Piezas almacen <>{">"}</> piezas SS
                               </h2>
                             </div>
-                            <div className="bg-amber-300 text-black m-1 p-2 rounded-md shadow-md min-h-13 h-fit">
+                            <div className="bg-amber-300 text-black m-1 p-1 rounded-md shadow-md  h-fit">
                               <h2 className="font-bold text-sm">
-                                Piezas almacen <strong>{"="}</strong> piezas SS
+                                Piezas almacen <>{"="}</> piezas SS
                               </h2>
                             </div>
-                            <div className="bg-rose-400 text-black m-1 p-2 rounded-md shadow-md min-h-13 h-fit">
+                            <div className="bg-rose-400 text-black m-1 p-1 rounded-md shadow-md  h-fit">
                               <h2 className="font-bold text-sm">
-                                Piezas almacen <strong>{"<"}</strong> piezas SS
+                                Piezas almacen <>{"<"}</> piezas SS
                               </h2>
                             </div>
                           </div>
