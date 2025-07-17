@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 
+import "./Navbar.css";
+
 const logo =
   "https://www.holcim.com.ar/themes/custom/corporate_country/components/header/images/holcim_logo_color.svg";
 
 const Navbar = () => {
   return (
-    <nav className="bg-slate-100 p-1">
-      <div className="container mx-auto h-full px-4 flex flex-wrap items-center justify-between">
+    <nav className="bg-slate-100 fixed top-0 right-0 left-0">
+      <div className="p-1 container mx-auto h-full px-4 flex flex-wrap items-center justify-between position: sticky;">
         {/* Left section: Logo + Country */}
         <div className="flex items-end">
           <Link to="/" className="font-bold">
@@ -22,10 +24,11 @@ const Navbar = () => {
         {/* Right section: Title */}
         <div className="text-center hidden sm:flex">
           <span className="text-xl font-bold text-slate-600">
-            Stock de Piezas en el Almacén
+            Stock de Piezas en el almacén
           </span>
         </div>
       </div>
+      <div className={`corporate_border`}></div>
     </nav>
   );
 };

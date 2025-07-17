@@ -47,7 +47,6 @@ function App() {
         data-theme="light"
       >
         <Navbar />
-        <div className={`corporate_border`}></div>
         <DataBase onDataLoaded={handleDataLoadedInApp} />{" "}
         {/* Pass the callback */}
         <div className="flex-1">

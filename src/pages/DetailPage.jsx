@@ -17,7 +17,7 @@ const DetailPage = ({ data }) => {
   }
 
   return (
-    <div className="flex flex-col md:flex-row md:h-[calc(100vh-64px)] maxh-full bg-neutral-200">
+    <div className="flex flex-col md:flex-row md:h-[calc(100vh-64px)] maxh-full bg-neutral-300 mt-15">
       {" "}
       {/* Contenedor principal*/}
       {/* Texto Izquierda */}
@@ -31,19 +31,20 @@ const DetailPage = ({ data }) => {
       {/* Sidebar con botones o referencias */}
       <div className="flex flex-col w-full md:w-64 justify-start bg-stone-100 m-1 p-1 rounded-md overflow-y-auto">
         <div className="flex flex-col items-center justify-star bg-neutral-100 h-fit  rounded-md">
-          <h1 className="text-xs md:text-2xl font-bold text-center mb-5">
-            {Maquina}
-          </h1>
           <Link
             to="/"
-            className="text-blue-500 text-center hover:underline text-xs md:text-lg mb-5"
+            className="text-blue-500 text-center hover:underline text-xs md:text-lg"
           >
             &larr; Volver al inicio
           </Link>
+          <h1 className="text-xs md:text-2xl font-bold text-center my-2 underline underline-offset-1">
+            {Maquina}
+          </h1>
+          <h2 className="font-bold p-2">
+            Haga click en algún boton de abajo para ver las piezas de ese grupo.
+          </h2>
         </div>
-        <h1 className="text-xs md:text-2xl font-bold text-center">
-          Referencias
-        </h1>
+
         <div className="m-1 p-1">
           <div className="grid grid-cols-1 gap-4">
             {data.map((posicion, i) => (
@@ -83,7 +84,7 @@ const DetailPage = ({ data }) => {
 
                       <label
                         htmlFor={`modal-${i}`}
-                        className="btn btn-sm btn-error absolute right-0 top-0"
+                        className="btn btn-sm btn-error fixed top-0 right-0 "
                       >
                         ✕
                       </label>
@@ -102,40 +103,42 @@ const DetailPage = ({ data }) => {
                       <div className="flex flex-col justify-between bg-stone-100 rounded-md m-1 p-1 w-full md:w-2/10">
                         {/* Título siempre visible */}
                         <div className="bg-stone-200 mb-1 border-1 rounded-lg border-black border-double">
-                          <h2 className="w-full font-bold text-lg text-center">
-                            Leyenda:
-                          </h2>
                           <div className=" text-black  m-1 p-1 shadow-md rounded-md min-h-13 h-fit bg-stone-100">
-                            <h2 className="font-bold text-sm">
+                            <h2 className="text-sm">
                               El color representa la cantidad de piezas que hay
                               en el <strong>almacén</strong> vs la cantidad de
-                              piezas de <strong>stock de seguridad</strong>
+                              piezas de <strong>stock de seguridad</strong>.
+                            </h2>
+                            <h2 className="text-sm">
+                              Haga
+                              <strong> click </strong>
+                              en una pieza para ver sus detalles.
                             </h2>
                           </div>
 
                           <div className="flex flex-col justify-between text-center">
-                            <div className="bg-emerald-400 text-black  m-1 p-2 shadow-md rounded-md min-h-13 h-fit">
+                            <div className=" bg-emerald-400 text-black m-1 p-2 shadow-md rounded-md min-h-13 h-fit">
                               <h2 className="font-bold text-sm ">
                                 Piezas almacen <strong>{">"}</strong> piezas SS
                               </h2>
                             </div>
-                          </div>
-                          <div className="bg-amber-300 text-black m-1 p-2 rounded-md shadow-md min-h-13 h-fit">
-                            <h2 className="font-bold text-sm">
-                              Piezas almacen <strong>{"="}</strong> piezas SS
-                            </h2>
-                          </div>
-                          <div className="bg-rose-400 text-black m-1 p-2 rounded-md shadow-md min-h-13 h-fit">
-                            <h2 className="font-bold text-sm">
-                              Piezas almacen <strong>{"<"}</strong> piezas SS
-                            </h2>
+                            <div className="bg-amber-300 text-black m-1 p-2 rounded-md shadow-md min-h-13 h-fit">
+                              <h2 className="font-bold text-sm">
+                                Piezas almacen <strong>{"="}</strong> piezas SS
+                              </h2>
+                            </div>
+                            <div className="bg-rose-400 text-black m-1 p-2 rounded-md shadow-md min-h-13 h-fit">
+                              <h2 className="font-bold text-sm">
+                                Piezas almacen <strong>{"<"}</strong> piezas SS
+                              </h2>
+                            </div>
                           </div>
                         </div>
                         {/* Botones / Contenido collapse */}
 
                         <div className="flex-1 overflow-y-auto  rounded-xl bg-stone-100 ">
                           <h2 className="w-full font-bold text-lg text-center mt-3">
-                            Referencias
+                            Referencias:
                           </h2>
                           <div className="grid grid-cols-1 gap-4 ">
                             {posicion.map((elemento, j) => {

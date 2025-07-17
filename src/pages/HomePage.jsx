@@ -5,10 +5,16 @@ import { Link } from "react-router-dom";
 
 const HomePage = React.memo(({ data }) => {
   return (
-    <div className="flex h-[calc(100vh-64px)] max-h-[100vh] bg-neutral-200">
+    <div className="flex h-[calc(100vh-64px)] max-h-[100vh] bg-neutral-200 mt-16">
       {/* Main content with nº images */}
       <div className="flex-1 p-6 overflow-auto">
-        <h1 className="text-2xl font-bold mb-6">Catálogos de Repuestos</h1>
+        <h1 className="text-2xl font-bold mb-6 inline-block mr-2 underline  underline-offset-2">
+          Catálogos de Repuestos:
+        </h1>
+        <h2 className="inline-block font-bold">
+          Haga click en algún Modelo de Máquina para ver los grupos de sus
+          piezas.
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 ">
           {data?.map((machine) => {
             if (!machine) {
